@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://quiz.cammi.app">
+  <meta http-equiv="refresh" content="5; url=https://quiz.cammi.app">
 
   <title>The Motivation Quiz</title>
   <meta name="description" content="Discover your unique motivational profile and get tips tailored to you. Built by Cammi for neurodivergent minds.">
@@ -28,6 +28,22 @@
   <link rel="icon" href="/icon.png" type="image/png">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/icon.png">
+
+  <script>
+    // Disable the meta refresh to prevent premature redirect
+    const meta = document.getElementById('meta-refresh');
+    if (meta) meta.remove();
+
+    // Redirect while preserving query string and hash
+    const query = window.location.search;
+    const hash = window.location.hash;
+    const target = 'https://quiz.cammi.app' + query + hash;
+    window.location.replace(target);
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://quiz.cammi.app">
+  </noscript>
 </head>
 <body>
   <p>You’ll be redirected to the quiz. If nothing happens, <a href="https://quiz.cammi.app">click here</a>.</p>
